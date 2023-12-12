@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style type="text/css">
+    @-webkit-keyframes rotatetimes{
+        0%{
+            transform: rotateX(0deg) rotateY(90deg)
+        } 
+        25%{
+            transform: rotateX(0deg) rotateY(180deg)
+        } 
+        50%{
+            transform: rotateX(315deg) rotateY(180deg)
+        } 
+        75%{
+            transform: rotateX(225deg) rotateZ(135deg)
+        }
+        100%{
+            transform: rotateZ(135deg) 
+        }  
+    }
+    .magic{
+        margin-top: 300px;
+        margin-left: 100px;
+        perspective: 4000px;
+    }
+    .cube{
+        width:200px;
+        height:200px;
+        position: relative;
+        transform-style: preserve-3d;
+        /* transform: rotateX(45deg)  rotateY(180deg) rotateZ(0deg); */
+        /* transform: rotateX(135deg)  rotateY(180deg) rotateZ(0deg) */
+        /* rotateX(-20deg)  */
+        -webkit-animation: rotatetimes 5s ease-in infinite;
+        
+    }
+    .cube >div{
+        width: 100%;
+        height:100%;
+        position :absolute;
+        /* left: 50%; */
+        color: #fff;
+        background-color: rgba(0,0,0,.5);
+        /* transition: transform .2s ease-in; */
+        transform: translateZ(100px);
+    }
+    .cube .out-front{
+            display: block;
+            transform: translateZ(100px);
+            background-color: #ff646460;
+        }
+        .cube .out-back{
+            display: block;
+            transform: translateZ(-100px) rotateY(180deg);
+            background-color: #75eef960;
+        }
+        .cube .out-left{
+            display: block;
+            transform: rotateY(90deg) translateZ(100px);
+            background-color: #f8e74a60;
+        }
+        .cube .out-right{
+            display: block;
+            transform: rotateY(-90deg) translateZ(100px);
+            background-color: #3064e560;
+        }
+        .cube .out-top{
+            display: block;
+            transform: rotateX(-90deg) translateZ(100px);
+            background-color: #f6832c60;
+        }
+        .cube .out-bottom{
+            display: block;
+            transform: rotateX(90deg) translateZ(100px);
+            background-color: #7f56f960;
+        }
+    /* 添加旋转动画 */
+</style>
+<body>
+    <div class="magic">
+        <div class="cube">
+            <div class="out-front">前面</div>
+            <div class="out-back">后面</div>
+            <div class="out-left">左面</div>
+            <div class="out-right">右面</div>
+            <div class="out-top">上面</div>
+            <div class="out-bottom">下面</div>
+        </div>
+    </div>
+</body>
+</html>
