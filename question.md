@@ -13,7 +13,7 @@
 > <div  class="head">
             <div class="eyes eyes-left"></div>
             <div class="eyes eyes-right"></div>
-css支持的语法是 
+- css支持的语法是 
 >.eyes{
     }
     .eyes-left{
